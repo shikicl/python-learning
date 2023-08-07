@@ -24,3 +24,31 @@ my_instance = MyClass()
 nums = [2, 3, 1, 0, 2, 5, 3]
 result = my_instance.findRepeatNumber(nums)
 print("重复数字：", result)
+
+
+##案例
+#用普通函数的方法定义和调用
+def findrepeatnumber(nums:[int])->int:
+    dic=set()
+    for num in nums:
+        if num in dic: return num
+        dic.add(num)
+    return -1
+
+nums=[2,32,63,44,5,9,9]
+result=findrepeatnumber(nums)
+print(result)
+
+#用类的方法定义和调用
+class Solution(object):
+    def findRepeatNumber(self, nums:[int])->int:
+        dic=set()
+        for num in nums:
+            if num in dic: return num
+            dic.add(num)
+        return -1
+
+my_instance=Solution()
+nums=[2, 3, 1, 0, 2, 5, 3]
+result=my_instance.findRepeatNumber(nums)
+print(result)
